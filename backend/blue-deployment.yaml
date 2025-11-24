@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: backend
+  namespace: expense
+  # Labels for the deployment
+  labels:
+    app: backend
+    tier: backend
+    project: expense
+    version: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+      tier: backend
+      project: expense
+      version: blue
+  # Pod template
+  template:
+    metadata:
+      labels:
+        app: backend
+        tier: backend
+        project: expense
+        version: blue
+    spec:
+      containers:
+        - name: backend
+          image: joindevops/backend:1.0.0
