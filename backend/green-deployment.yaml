@@ -8,7 +8,7 @@ metadata:
     app: backend
     tier: backend
     project: expense
-    version: blue
+    version: green
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,7 @@ spec:
       app: backend
       tier: backend
       project: expense
-      version: blue
+      version: green
   # Pod template
   template:
     metadata:
@@ -24,7 +24,7 @@ spec:
         app: backend
         tier: backend
         project: expense
-        version: blue
+        version: green
     spec:
       containers:
         - name: backend
